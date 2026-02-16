@@ -1,8 +1,8 @@
 class Solution:
     def reverseBits(self, n: int) -> int:
-        bits = format(n, '032b')
-        reversed = bits[::-1]  
-        res = int(reversed, 2)
+        res = 0
+        for i in range(32):
+            res = (res << 1) | (n & 1)
+            n = n >> 1
         return res
-        
         
